@@ -13,13 +13,11 @@ namespace Snake
         private SnakeHead _snakeHead;
 
         private const float MinX = -2.5f, MaxX = 2.5f;
-        private Camera _camera;
-        private float _snakeHeadPosX;
+
         public int BodySize => _segments.Count;
 
         private void Awake()
         {
-            _camera = Camera.main;
             _snakeHead = GetComponentInChildren<SnakeHead>();
             AddSegment();
             AddSegment();
@@ -47,10 +45,7 @@ namespace Snake
         {
             var snakeHeadPrePos = _snakeHead.transform.position;
             var newPos = snakeHeadPrePos + transform.up * speed * Time.fixedDeltaTime;
-            // newPos.x = _snakeHeadPosX;
             _snakeHead.transform.position = newPos;
-            // _snakeHead.MoveTo(newPos);
-            // _snakeHead.transform.position = Vector3.Lerp(snakeHeadPrePos, newPos, speed * Time.fixedDeltaTime);
                 
             foreach (var segment in _segments)
             {
@@ -63,20 +58,5 @@ namespace Snake
                 snakeHeadPrePos = segmentPrePos;
             }
         }
-        
-        private void OnMouseDrag1()
-        {
-            var mousePos = Input.mousePosition;
-            if (_camera is { }) mousePos = _camera.ScreenToWorldPoint(mousePos);
-            mousePos.x = Mathf.Clamp(mousePos.x, MinX, MaxX);
-
-            _snakeHeadPosX = mousePos.x;
-
-            // var snakeHeadPos = _snakeHead.transform.position;
-            // snakeHeadPos.x = mousePos.x;
-
-            // _snakeHead.transform.position = snakeHeadPos;
-        }
-
     }
 }

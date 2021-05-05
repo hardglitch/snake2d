@@ -26,7 +26,6 @@ public class Controllers : MonoBehaviour
         var snakeHeadPos = _snakeHead.transform.position;
         snakeHeadPos.x = mousePos.x;
 
-        // _snakeHead.transform.position = snakeHeadPos;
         _snakeHead.transform.position = Vector3.Lerp(_snakeHead.transform.position, snakeHeadPos, sideSpeed * Time.deltaTime);
 
     }
