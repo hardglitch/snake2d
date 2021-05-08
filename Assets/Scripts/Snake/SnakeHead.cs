@@ -27,9 +27,10 @@ namespace Snake
         {
             if (other.gameObject.TryGetComponent(out Block block))
             {
-                // var sparkles = Instantiate(effectOnCollision, transform.position, Quaternion.identity, transform);
+                var sparkleSpawnPos = transform.position;
+                sparkleSpawnPos.y += transform.localScale.y;
+                Instantiate(effectOnCollision, sparkleSpawnPos, Quaternion.identity, transform);
                 block.Damage(ref _snakeBody);
-                // sparkles.enabled = false;
             }
         }
 
