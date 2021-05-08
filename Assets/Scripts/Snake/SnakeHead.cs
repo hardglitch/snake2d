@@ -7,6 +7,7 @@ namespace Snake
     public class SnakeHead : MonoBehaviour
     {
         [SerializeField] private TMP_Text bodySizeText;
+        [SerializeField] private EffectOnCollision effectOnCollision;
         private Rigidbody2D _rigidbody2D;
         private SnakeBody _snakeBody;
 
@@ -26,7 +27,9 @@ namespace Snake
         {
             if (other.gameObject.TryGetComponent(out Block block))
             {
+                // var sparkles = Instantiate(effectOnCollision, transform.position, Quaternion.identity, transform);
                 block.Damage(ref _snakeBody);
+                // sparkles.enabled = false;
             }
         }
 

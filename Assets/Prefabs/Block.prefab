@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 498303338743394683}
   - component: {fileID: 498303338743394685}
   - component: {fileID: 498303338743394682}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,6 +45,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -100,10 +101,10 @@ MonoBehaviour:
   blockLegend: {fileID: 498303340117279722}
   randomRange: {x: 1, y: 30}
   colors:
-  - {r: 0.5647059, g: 0.74509805, b: 0.42745098, a: 0}
-  - {r: 0.2627451, g: 0.6666667, b: 0.54509807, a: 0}
-  - {r: 0.9529412, g: 0.44705883, b: 0.17254902, a: 0}
-  - {r: 0.9764706, g: 0.25490198, b: 0.26666668, a: 0}
+  - {r: 0.5647059, g: 0.74509805, b: 0.42745098, a: 1}
+  - {r: 0.2627451, g: 0.6666667, b: 0.54509807, a: 1}
+  - {r: 0.9529412, g: 0.44705883, b: 0.17254902, a: 1}
+  - {r: 0.9764706, g: 0.25490198, b: 0.26666668, a: 1}
 --- !u!61 &498303338743394682
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -142,7 +143,7 @@ GameObject:
   - component: {fileID: 498303340082787558}
   - component: {fileID: 498303340082787557}
   - component: {fileID: 498303340082787556}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +221,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498303340082787554}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
@@ -241,7 +242,7 @@ GameObject:
   - component: {fileID: 498303340117279721}
   - component: {fileID: 498303340117279723}
   - component: {fileID: 498303340117279722}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

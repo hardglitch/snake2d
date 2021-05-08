@@ -1,6 +1,7 @@
 using Snake;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class Block : MonoBehaviour
@@ -10,7 +11,7 @@ public class Block : MonoBehaviour
     [SerializeField] private Color[] colors;
 
     private int _blockStrong;
-    private readonly int _baseColor = Shader.PropertyToID("_BaseColor");
+    // private readonly int _baseColor = Shader.PropertyToID("_BaseColor");
 
 
     private void Start()
@@ -22,13 +23,18 @@ public class Block : MonoBehaviour
         var blockStrongLevel = randomRange.y / colors.Length;
         var strongLevelColor = _blockStrong / blockStrongLevel;
         if (strongLevelColor >= colors.Length) strongLevelColor = colors.Length - 1;
-        GetComponent<SpriteRenderer>().material.SetColor(_baseColor, colors[strongLevelColor]);
+        // GetComponent<SpriteRenderer>().material.SetColor(_baseColor, colors[strongLevelColor]);
+        GetComponent<SpriteRenderer>().color = colors[strongLevelColor];
     }
 
     public void Damage(ref SnakeBody snakeBody)
     {
         snakeBody.RemoveSegment();
-        if (snakeBody.BodySize < 1) Destroy(snakeBody.gameObject);   //TODO: Death Method
+        if (snakeBody.BodySize < 1)
+        {
+            Destroy(snakeBody.gameObject);   //TODO: Death Method
+            SceneManager.LoadScene(0);
+        }
             
         blockLegend.text = (_blockStrong--).ToString();
         if (_blockStrong <= 0) Destroy(gameObject);

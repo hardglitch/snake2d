@@ -7,7 +7,7 @@ public class Controllers : MonoBehaviour
     [SerializeField] private float sideSpeed = 1f;
     private SnakeHead _snakeHead;
     private const float MinX = -2.5f, MaxX = 2.5f;
-    private float _snakeHeadRadius; 
+    private float _snakeHeadRadius = 0.5f; 
     private Camera _camera;
 
     private void Start()
