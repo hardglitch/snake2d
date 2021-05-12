@@ -8,6 +8,7 @@ namespace Snake
     {
         [SerializeField] private TMP_Text bodySizeText;
         [SerializeField] private EffectOnCollision effectOnCollision;
+
         private Rigidbody2D _rigidbody2D;
         private SnakeBody _snakeBody;
 
@@ -17,12 +18,12 @@ namespace Snake
             _snakeBody = GetComponentInParent<SnakeBody>();
         }
 
-        public void MoveTo(Vector3 position)
+        public void MoveTo(Vector2 position)
         {
             _rigidbody2D.MovePosition(position);
             bodySizeText.text = _snakeBody.BodySize.ToString();
         }
-        
+
         private void OnCollisionStay2D(Collision2D other)
         {
             if (other.gameObject.TryGetComponent(out Block block))
@@ -31,6 +32,7 @@ namespace Snake
                 sparkleSpawnPos.y += transform.localScale.y;
                 Instantiate(effectOnCollision, sparkleSpawnPos, Quaternion.identity, transform);
                 block.Damage(ref _snakeBody);
+                _rigidbody2D.AddForce(Vector2.down, ForceMode2D.Impulse);
             }
         }
 

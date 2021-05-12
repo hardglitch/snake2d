@@ -6,23 +6,17 @@ namespace Snake
     public class SnakeBody : MonoBehaviour
     {
         [SerializeField] private Segment segmentPrefab;
-        [SerializeField] private float bodySpringiness = 10f;
         [SerializeField] private float speed = 1f;
         private readonly List<Segment> _segments = new List<Segment>();
-        private float _segmentDiameter = 0.5f;
         private SnakeHead _snakeHead;
-
-        private const float MinX = -2.5f, MaxX = 2.5f;
+        private Controllers _controllers;
 
         public int BodySize => _segments.Count;
 
-        private void Awake()
+        private void Start()
         {
             _snakeHead = GetComponentInChildren<SnakeHead>();
-            AddSegment();
-            AddSegment();
-            AddSegment();
-            _segmentDiameter = _segments[0].transform.localScale.y;
+            _controllers = GetComponentInChildren<Controllers>();
         }
 
         private void FixedUpdate()
@@ -32,30 +26,37 @@ namespace Snake
 
         public void AddSegment()
         {
-            _segments.Add(Instantiate(segmentPrefab, transform));
+            var segment = Instantiate(segmentPrefab, transform);
+            _segments.Add(segment);
         }
 
         public void RemoveSegment()
         {
+            if (_segments.Count <= 0) return;
             Destroy(_segments[0].gameObject);
             _segments.RemoveAt(0);
         }
 
         private void Move()
         {
+            var direction = _controllers.GetDirectionToTouch();
+            const float sinusY = 0.5f; // 30..150 Degrees Diapason
+            if (direction.y < sinusY) direction.y = sinusY; 
+            _snakeHead.transform.up = direction;
+
             var snakeHeadPrePos = _snakeHead.transform.position;
-            var newPos = snakeHeadPrePos + transform.up * speed * Time.fixedDeltaTime;
-            _snakeHead.transform.position = newPos;
-                
+            var newPos = snakeHeadPrePos + _snakeHead.transform.up * speed * Time.fixedDeltaTime;
+            _snakeHead.MoveTo(newPos);
+
+            if (_segments is null) return;
+            var segmentPos = snakeHeadPrePos;
             foreach (var segment in _segments)
             {
                 var segmentPrePos = segment.transform.position;
-                if (snakeHeadPrePos.y - segmentPrePos.y < _segmentDiameter)
-                    segmentPrePos.y = snakeHeadPrePos.y - _segmentDiameter;
+                segmentPos.y += sinusY;
                 segment.transform.position = Vector2.Lerp(
-                    segmentPrePos, snakeHeadPrePos, bodySpringiness * Time.fixedDeltaTime);
-                _snakeHead.MoveTo(segment.transform.position);
-                snakeHeadPrePos = segmentPrePos;
+                    segmentPrePos, segmentPos, speed * Time.fixedDeltaTime);
+                segmentPos = segmentPrePos;
             }
         }
     }
