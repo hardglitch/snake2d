@@ -42,21 +42,22 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Snake\SnakeBody.cs" />
-     <Compile Include="Assets\Scripts\LevelCreator.cs" />
+     <Compile Include="Assets\Scripts\Level\LevelCreator.cs" />
      <Compile Include="Assets\Scripts\Snake\SnakeTouchZone.cs" />
      <Compile Include="Assets\Scripts\Snake\SnakeHead.cs" />
-     <Compile Include="Assets\Scripts\Bonus.cs" />
-     <Compile Include="Assets\Scripts\GUIControllers.cs" />
-     <Compile Include="Assets\Scripts\TimeManagement.cs" />
+     <Compile Include="Assets\Scripts\Objects\Bonus.cs" />
+     <Compile Include="Assets\Scripts\GUI\GUIControllers.cs" />
+     <Compile Include="Assets\Scripts\GUI\TimeManagement.cs" />
      <Compile Include="Assets\Scripts\EffectOnCollision.cs" />
      <Compile Include="Assets\Scripts\CameraBehaviour.cs" />
      <Compile Include="Assets\Scripts\Snake\Segment.cs" />
-     <Compile Include="Assets\Scripts\SpawnPoint.cs" />
-     <Compile Include="Assets\Scripts\Screen.cs" />
-     <Compile Include="Assets\Scripts\Block.cs" />
-     <Compile Include="Assets\Scripts\Empty.cs" />
+     <Compile Include="Assets\Scripts\Level\SpawnPoint.cs" />
+     <Compile Include="Assets\Scripts\GUI\Screen.cs" />
+     <Compile Include="Assets\Scripts\Objects\Block.cs" />
+     <Compile Include="Assets\Scripts\Objects\Empty.cs" />
      <Compile Include="Assets\Scripts\Snake\Controllers.cs" />
-     <Compile Include="Assets\Scripts\Wall.cs" />
+     <Compile Include="Assets\Scripts\Objects\Wall.cs" />
+     <Compile Include="Assets\Scripts\GUI\SoundVolume.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Resources\sheet_white2x.xml" />
