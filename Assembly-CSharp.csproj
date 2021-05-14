@@ -44,23 +44,52 @@
      <Compile Include="Assets\Scripts\Snake\SnakeBody.cs" />
      <Compile Include="Assets\Scripts\Level\LevelCreator.cs" />
      <Compile Include="Assets\Scripts\Snake\SnakeTouchZone.cs" />
+     <Compile Include="Assets\Scripts\HUD\SoundVolume.cs" />
      <Compile Include="Assets\Scripts\Snake\SnakeHead.cs" />
      <Compile Include="Assets\Scripts\Objects\Bonus.cs" />
-     <Compile Include="Assets\Scripts\GUI\GUIControllers.cs" />
-     <Compile Include="Assets\Scripts\GUI\TimeManagement.cs" />
+     <Compile Include="Assets\Scripts\HUD\GUIControllers.cs" />
+     <Compile Include="Assets\Scripts\HUD\TimeManagement.cs" />
      <Compile Include="Assets\Scripts\EffectOnCollision.cs" />
      <Compile Include="Assets\Scripts\CameraBehaviour.cs" />
      <Compile Include="Assets\Scripts\Snake\Segment.cs" />
      <Compile Include="Assets\Scripts\Level\SpawnPoint.cs" />
-     <Compile Include="Assets\Scripts\GUI\Screen.cs" />
+     <Compile Include="Assets\Scripts\HUD\Screen.cs" />
      <Compile Include="Assets\Scripts\Objects\Block.cs" />
      <Compile Include="Assets\Scripts\Objects\Empty.cs" />
      <Compile Include="Assets\Scripts\Snake\Controllers.cs" />
      <Compile Include="Assets\Scripts\Objects\Wall.cs" />
-     <Compile Include="Assets\Scripts\GUI\SoundVolume.cs" />
+     <Compile Include="Assets\Appodeal\Api\Appodeal\Appodeal.cs" />
+     <Compile Include="Assets\Appodeal\Common\ConsentManager\IConsentFormListener.cs" />
+     <Compile Include="Assets\Appodeal\Common\ConsentManager\IConsentInfoUpdateListener.cs" />
+     <Compile Include="Assets\Appodeal\Platforms\Appodeal\Dummy\DummyClient.cs" />
+     <Compile Include="Assets\Appodeal\Common\Appodeal\IBannerAdListener.cs" />
+     <Compile Include="Assets\Appodeal\Common\Appodeal\IMrecAdListener.cs" />
+     <Compile Include="Assets\Appodeal\Platforms\ConsentManager\Dummy\Dummy.cs" />
+     <Compile Include="Assets\Appodeal\Common\ConsentManager\IConsentManager.cs" />
+     <Compile Include="Assets\Appodeal\Api\ConsentManager\ConsentManager.cs" />
+     <Compile Include="Assets\Appodeal\Platforms\Appodeal\Android\AndroidAppodealClient.cs" />
+     <Compile Include="Assets\Appodeal\Common\Appodeal\INonSkippableVideoAdListener.cs" />
+     <Compile Include="Assets\Appodeal\Platforms\Appodeal\Android\AppodealNonSkippableVideoCallbacks.cs" />
+     <Compile Include="Assets\Appodeal\Platforms\Appodeal\Android\AppodealRewardedVideoCallbacks.cs" />
+     <Compile Include="Assets\Appodeal\Platforms\ConsentManager\Android\ConsentInfoUpdateCallbacks.cs" />
+     <Compile Include="Assets\Appodeal\Platforms\ConsentManager\iOS\iOSConsentManagerClient.cs" />
+     <Compile Include="Assets\Appodeal\Platforms\Appodeal\iOS\AppodealObjCBridge.cs" />
+     <Compile Include="Assets\Appodeal\Common\Appodeal\IRewardedVideoAdListener.cs" />
+     <Compile Include="Assets\Appodeal\Platforms\ConsentManager\Android\AndroidConsentManagerClient.cs" />
+     <Compile Include="Assets\Appodeal\Platforms\Appodeal\Android\AppodealMrecCallbacks.cs" />
+     <Compile Include="Assets\Appodeal\Platforms\ConsentManager\iOS\ConsentManagerObjCBridge.cs" />
+     <Compile Include="Assets\Appodeal\Common\Appodeal\IPermissionGrantedListener.cs" />
+     <Compile Include="Assets\Appodeal\Platforms\Appodeal\Android\AppodealPermissionCallbacks.cs" />
+     <Compile Include="Assets\Appodeal\Platforms\Appodeal\iOS\AppodealAdsClient.cs" />
+     <Compile Include="Assets\Appodeal\Platforms\Appodeal\AppodealAdsClientFactory.cs" />
+     <Compile Include="Assets\Appodeal\Platforms\ConsentManager\ConsentManagerClientFactory.cs" />
+     <Compile Include="Assets\Appodeal\Common\Appodeal\IInterstitialAdListener.cs" />
+     <Compile Include="Assets\Appodeal\Platforms\Appodeal\Android\AppodealBannerCallbacks.cs" />
+     <Compile Include="Assets\Appodeal\Common\Appodeal\IAppodealAdsClient.cs" />
+     <Compile Include="Assets\Appodeal\Platforms\ConsentManager\Android\ConsentFormCallbacks.cs" />
+     <Compile Include="Assets\Appodeal\Platforms\Appodeal\Android\AppodealInterstitialCallbacks.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-     <None Include="Assets\Resources\sheet_white2x.xml" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
@@ -779,6 +808,14 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="GoogleMobileAds.csproj">
+      <Project>{f0435baa-021c-e393-34a1-acc0f506f12d}</Project>
+      <Name>GoogleMobileAds</Name>
+    </ProjectReference>
+    <ProjectReference Include="GoogleMobileAds.Editor.csproj">
+      <Project>{c85dfa22-30fa-2cc0-5eae-1e71d53356e7}</Project>
+      <Name>GoogleMobileAds.Editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
