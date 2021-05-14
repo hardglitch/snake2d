@@ -3,40 +3,41 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(SpriteRenderer))]
-public class Block : MonoBehaviour
+namespace Objects
 {
-    [SerializeField] private TMP_Text blockLegend;
-    [SerializeField] private Vector2Int randomRange = new Vector2Int(1,10);
-    [SerializeField] private Color[] colors;
-
-    private int _blockStrong;
-    // private readonly int _baseColor = Shader.PropertyToID("_BaseColor");
-
-
-    private void Start()
+    [RequireComponent(typeof(SpriteRenderer))]
+    public class Block : MonoBehaviour
     {
-        var a = 
-        _blockStrong = Random.Range(randomRange.x, randomRange.y);
-        blockLegend.text = _blockStrong.ToString();
+        [SerializeField] private TMP_Text blockLegend;
+        [SerializeField] private Vector2Int randomRange = new Vector2Int(1,10);
+        [SerializeField] private Color[] colors;
 
-        var blockStrongLevel = randomRange.y / colors.Length;
-        var strongLevelColor = _blockStrong / blockStrongLevel;
-        if (strongLevelColor >= colors.Length) strongLevelColor = colors.Length - 1;
-        // GetComponent<SpriteRenderer>().material.SetColor(_baseColor, colors[strongLevelColor]);
-        GetComponent<SpriteRenderer>().color = colors[strongLevelColor];
-    }
+        private int _blockStrong;
 
-    public void Damage(ref SnakeBody snakeBody)
-    {
-        snakeBody.RemoveSegment();
-        if (snakeBody.BodySize < 1)
+        
+        private void Start()
         {
-            Destroy(snakeBody.gameObject);   //TODO: Death Method
-            SceneManager.LoadScene(0);
+            var a = 
+                _blockStrong = Random.Range(randomRange.x, randomRange.y);
+            blockLegend.text = _blockStrong.ToString();
+
+            var blockStrongLevel = randomRange.y / colors.Length;
+            var strongLevelColor = _blockStrong / blockStrongLevel;
+            if (strongLevelColor >= colors.Length) strongLevelColor = colors.Length - 1;
+            GetComponent<SpriteRenderer>().color = colors[strongLevelColor];
         }
+
+        public void Damage(ref SnakeBody snakeBody)
+        {
+            snakeBody.RemoveSegment();
+            if (snakeBody.BodySize < 1)
+            {
+                Destroy(snakeBody.gameObject);   //TODO: Death Method
+                SceneManager.LoadScene(0);
+            }
             
-        blockLegend.text = (_blockStrong--).ToString();
-        if (_blockStrong <= 0) Destroy(gameObject);
-    } 
+            blockLegend.text = (_blockStrong--).ToString();
+            if (_blockStrong <= 0) Destroy(gameObject);
+        } 
+    }
 }

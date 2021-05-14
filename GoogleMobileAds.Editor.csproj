@@ -289,11 +289,23 @@
      <Reference Include="UnityEditor.WindowsStandalone.Extensions">
      <HintPath>F:/PROGRAM FILES/Unity/2021.1.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
      </Reference>
+     <Reference Include="Google.VersionHandlerImpl_v1.2.164">
+     <HintPath>F:/_DOX/My Game Projects/Snake2D/Assets/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.164.dll</HintPath>
+     </Reference>
      <Reference Include="Google.PackageManagerResolver_v1.2.165">
      <HintPath>F:/_DOX/My Game Projects/Snake2D/Library/PackageCache/com.google.external-dependency-manager@1.2.165/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.165.dll</HintPath>
      </Reference>
      <Reference Include="Google.VersionHandler">
      <HintPath>F:/_DOX/My Game Projects/Snake2D/Library/PackageCache/com.google.external-dependency-manager@1.2.165/ExternalDependencyManager/Editor/Google.VersionHandler.dll</HintPath>
+     </Reference>
+     <Reference Include="Google.JarResolver_v1.2.164">
+     <HintPath>F:/_DOX/My Game Projects/Snake2D/Assets/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.164.dll</HintPath>
+     </Reference>
+     <Reference Include="Google.PackageManagerResolver_v1.2.164">
+     <HintPath>F:/_DOX/My Game Projects/Snake2D/Assets/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.164.dll</HintPath>
+     </Reference>
+     <Reference Include="Google.IOSResolver_v1.2.164">
+     <HintPath>F:/_DOX/My Game Projects/Snake2D/Assets/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.164.dll</HintPath>
      </Reference>
      <Reference Include="Google.JarResolver_v1.2.165">
      <HintPath>F:/_DOX/My Game Projects/Snake2D/Library/PackageCache/com.google.external-dependency-manager@1.2.165/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.165.dll</HintPath>
@@ -303,18 +315,6 @@
      </Reference>
      <Reference Include="Google.VersionHandlerImpl_v1.2.165">
      <HintPath>F:/_DOX/My Game Projects/Snake2D/Library/PackageCache/com.google.external-dependency-manager@1.2.165/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.165.dll</HintPath>
-     </Reference>
-     <Reference Include="Google.VersionHandlerImpl_v1.2.164">
-     <HintPath>F:/_DOX/My Game Projects/Snake2D/Assets/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.164.dll</HintPath>
-     </Reference>
-     <Reference Include="Google.JarResolver_v1.2.164">
-     <HintPath>F:/_DOX/My Game Projects/Snake2D/Assets/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.164.dll</HintPath>
-     </Reference>
-     <Reference Include="Google.IOSResolver_v1.2.164">
-     <HintPath>F:/_DOX/My Game Projects/Snake2D/Assets/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.164.dll</HintPath>
-     </Reference>
-     <Reference Include="Google.PackageManagerResolver_v1.2.164">
-     <HintPath>F:/_DOX/My Game Projects/Snake2D/Assets/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.164.dll</HintPath>
      </Reference>
      <Reference Include="nunit.framework">
      <HintPath>F:/_DOX/My Game Projects/Snake2D/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>

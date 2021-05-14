@@ -1169,6 +1169,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1289,6 +1290,18 @@ MonoBehaviour:
   snakeHead: {fileID: 313819138}
   speed: 10
   snakePosShift: 2
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 176b86110de0fb24dbef6d8f4d915cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &584234511
 GameObject:
   m_ObjectHideFlags: 0
@@ -2142,7 +2155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segmentPrefab: {fileID: 6686688341808680279, guid: 46e6cfca5a49c184cbf1ea2720a691ce, type: 3}
-  speed: 1
+  speed: 3
 --- !u!4 &1212427958
 Transform:
   m_ObjectHideFlags: 0
@@ -2917,6 +2930,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1968572770}
   - component: {fileID: 1968572771}
+  - component: {fileID: 1968572772}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -2965,6 +2979,18 @@ MonoBehaviour:
   wallSpawnChance: 20
   bonusSpawnChance: 10
   levelSize: 100
+--- !u!114 &1968572772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968572769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 176b86110de0fb24dbef6d8f4d915cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1977877741
 GameObject:
   m_ObjectHideFlags: 0

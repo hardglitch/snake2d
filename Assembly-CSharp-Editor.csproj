@@ -41,28 +41,28 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Appodeal\Editor\NetworksManager\EditorCoroutines.cs" />
-     <Compile Include="Assets\Appodeal\Editor\NetworksManager\XmlUtilities.cs" />
-     <Compile Include="Assets\Appodeal\Editor\NetworksManager\Data\NetworkDependency.cs" />
-     <Compile Include="Assets\Appodeal\Editor\Checkers\CheckerWindow.cs" />
-     <Compile Include="Assets\Appodeal\Editor\Utils\AppodealUnityUtils.cs" />
-     <Compile Include="Assets\Appodeal\Editor\Checkers\ManifestChecker.cs" />
      <Compile Include="Assets\Appodeal\Editor\Utils\AppodealPostProcess.cs" />
-     <Compile Include="Assets\Appodeal\Editor\Utils\ArchitectureFilter.cs" />
-     <Compile Include="Assets\Appodeal\Editor\Utils\AppodealAssetsPostProcess.cs" />
-     <Compile Include="Assets\Appodeal\Editor\Utils\AppodealInternalSettings.cs" />
-     <Compile Include="Assets\Appodeal\Editor\Utils\AppodealEditorSettings.cs" />
-     <Compile Include="Assets\Appodeal\Editor\Utils\iOSPostprocessUtils.cs" />
-     <Compile Include="Assets\Appodeal\Editor\Checkers\MultidexActivator.cs" />
-     <Compile Include="Assets\Appodeal\Editor\NetworksManager\EditorCoroutineExtensions.cs" />
+     <Compile Include="Assets\Appodeal\Editor\NetworksManager\XmlUtilities.cs" />
      <Compile Include="Assets\Appodeal\Editor\NetworksManager\Data\AppodealUnityPlugin.cs" />
-     <Compile Include="Assets\Appodeal\Editor\InternalResources\AppodealSettings.cs" />
+     <Compile Include="Assets\Appodeal\Editor\NetworksManager\AppodealAdapterManager.cs" />
+     <Compile Include="Assets\Appodeal\Editor\Checkers\ManifestChecker.cs" />
+     <Compile Include="Assets\Appodeal\Editor\NetworksManager\AppodealDependencyUtils.cs" />
+     <Compile Include="Assets\Appodeal\Editor\NetworksManager\EditorCoroutineExtensions.cs" />
+     <Compile Include="Assets\Appodeal\Editor\NetworksManager\EditorCoroutines.cs" />
      <Compile Include="Assets\Appodeal\Editor\Utils\AppodealPreProcess.cs" />
-     <Compile Include="Assets\Appodeal\Editor\Checkers\PlayServicesChecker.cs" />
      <Compile Include="Assets\Appodeal\Editor\Checkers\PlatformChecker.cs" />
      <Compile Include="Assets\Appodeal\Editor\Utils\RemoveHelper.cs" />
-     <Compile Include="Assets\Appodeal\Editor\NetworksManager\AppodealAdapterManager.cs" />
-     <Compile Include="Assets\Appodeal\Editor\NetworksManager\AppodealDependencyUtils.cs" />
+     <Compile Include="Assets\Appodeal\Editor\InternalResources\AppodealSettings.cs" />
+     <Compile Include="Assets\Appodeal\Editor\Utils\iOSPostprocessUtils.cs" />
+     <Compile Include="Assets\Appodeal\Editor\Checkers\MultidexActivator.cs" />
+     <Compile Include="Assets\Appodeal\Editor\Utils\ArchitectureFilter.cs" />
+     <Compile Include="Assets\Appodeal\Editor\Checkers\CheckerWindow.cs" />
+     <Compile Include="Assets\Appodeal\Editor\Utils\AppodealAssetsPostProcess.cs" />
+     <Compile Include="Assets\Appodeal\Editor\Utils\AppodealEditorSettings.cs" />
+     <Compile Include="Assets\Appodeal\Editor\Utils\AppodealUnityUtils.cs" />
+     <Compile Include="Assets\Appodeal\Editor\Checkers\PlayServicesChecker.cs" />
+     <Compile Include="Assets\Appodeal\Editor\NetworksManager\Data\NetworkDependency.cs" />
+     <Compile Include="Assets\Appodeal\Editor\Utils\AppodealInternalSettings.cs" />
      <None Include="Assets\Appodeal\Editor\NetworkConfigs\StartAppDependencies.xml" />
      <None Include="Assets\Appodeal\Editor\NetworkConfigs\AppLovinDependencies.xml" />
      <None Include="Assets\Appodeal\Editor\NetworkConfigs\A4GDependencies.xml" />
@@ -322,11 +322,23 @@
      <Reference Include="UnityEditor.WindowsStandalone.Extensions">
      <HintPath>F:/PROGRAM FILES/Unity/2021.1.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
      </Reference>
+     <Reference Include="Google.VersionHandlerImpl_v1.2.164">
+     <HintPath>F:/_DOX/My Game Projects/Snake2D/Assets/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.164.dll</HintPath>
+     </Reference>
      <Reference Include="Google.PackageManagerResolver_v1.2.165">
      <HintPath>F:/_DOX/My Game Projects/Snake2D/Library/PackageCache/com.google.external-dependency-manager@1.2.165/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.165.dll</HintPath>
      </Reference>
      <Reference Include="Google.VersionHandler">
      <HintPath>F:/_DOX/My Game Projects/Snake2D/Library/PackageCache/com.google.external-dependency-manager@1.2.165/ExternalDependencyManager/Editor/Google.VersionHandler.dll</HintPath>
+     </Reference>
+     <Reference Include="Google.JarResolver_v1.2.164">
+     <HintPath>F:/_DOX/My Game Projects/Snake2D/Assets/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.164.dll</HintPath>
+     </Reference>
+     <Reference Include="Google.PackageManagerResolver_v1.2.164">
+     <HintPath>F:/_DOX/My Game Projects/Snake2D/Assets/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.164.dll</HintPath>
+     </Reference>
+     <Reference Include="Google.IOSResolver_v1.2.164">
+     <HintPath>F:/_DOX/My Game Projects/Snake2D/Assets/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.164.dll</HintPath>
      </Reference>
      <Reference Include="Google.JarResolver_v1.2.165">
      <HintPath>F:/_DOX/My Game Projects/Snake2D/Library/PackageCache/com.google.external-dependency-manager@1.2.165/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.165.dll</HintPath>
@@ -336,18 +348,6 @@
      </Reference>
      <Reference Include="Google.VersionHandlerImpl_v1.2.165">
      <HintPath>F:/_DOX/My Game Projects/Snake2D/Library/PackageCache/com.google.external-dependency-manager@1.2.165/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.165.dll</HintPath>
-     </Reference>
-     <Reference Include="Google.VersionHandlerImpl_v1.2.164">
-     <HintPath>F:/_DOX/My Game Projects/Snake2D/Assets/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.164.dll</HintPath>
-     </Reference>
-     <Reference Include="Google.JarResolver_v1.2.164">
-     <HintPath>F:/_DOX/My Game Projects/Snake2D/Assets/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.164.dll</HintPath>
-     </Reference>
-     <Reference Include="Google.IOSResolver_v1.2.164">
-     <HintPath>F:/_DOX/My Game Projects/Snake2D/Assets/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.164.dll</HintPath>
-     </Reference>
-     <Reference Include="Google.PackageManagerResolver_v1.2.164">
-     <HintPath>F:/_DOX/My Game Projects/Snake2D/Assets/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.164.dll</HintPath>
      </Reference>
      <Reference Include="nunit.framework">
      <HintPath>F:/_DOX/My Game Projects/Snake2D/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>

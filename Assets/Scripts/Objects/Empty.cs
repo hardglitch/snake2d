@@ -1,5 +1,8 @@
 using UnityEngine;
 
-public class Empty : MonoBehaviour
+namespace Objects
 {
+    public class Empty : MonoBehaviour
+    {
+    }
 }
