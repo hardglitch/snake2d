@@ -1,6 +1,7 @@
 using ADS;
 using Objects;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Level
 {
@@ -14,8 +15,7 @@ namespace Level
         [SerializeField] private Wall wallPrefab;
         [SerializeField] private Bonus bonusPrefab;
 
-        [Space]
-        [Header("Percentage")]
+        [Space] [Header("Percentage")]
         [Range(0, 100)]
         [SerializeField] private int emptySpaceChance = 40;
         private const int EmptySpaceConst = 0;
@@ -42,13 +42,16 @@ namespace Level
         private void Start()
         {
             _adSettings = GetComponent<ADSettings>();
-            _adSettings.ShowInterstitial();
+            if (ReloadCounter.Value == 0 || ReloadCounter.Value % 5 == 0)
+                _adSettings.ShowInterstitial();
+
             _spawnPoints = GetComponentsInChildren<SpawnPoint>();
             for (var i = 0; i < levelSize; i++)
             {
                 GenerateLine();
                 MoveSpawner();
             }
+            
             _adSettings.ShowBanner();
         }
 

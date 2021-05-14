@@ -6,7 +6,6 @@ namespace Snake
     public class Controllers : MonoBehaviour
     {
         private SnakeHead _snakeHead;
-        private SnakeBody _snakeBody;
         private const float MinX = -2.5f, MaxX = 2.5f;
         private float _snakeHeadRadius = 0.5f; 
         private Camera _camera;
@@ -16,7 +15,6 @@ namespace Snake
         {
             _camera = Camera.main;
             _snakeHead = GetComponent<SnakeHead>();
-            _snakeBody = GetComponentInParent<SnakeBody>();
             _snakeHeadRadius = _snakeHead.transform.localScale.x;
         }
 

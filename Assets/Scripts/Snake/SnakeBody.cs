@@ -3,13 +3,19 @@ using UnityEngine;
 
 namespace Snake
 {
+    [RequireComponent(typeof(AudioSource))]
     public class SnakeBody : MonoBehaviour
     {
         [SerializeField] private Segment segmentPrefab;
         [SerializeField] private float speed = 1f;
+
         private readonly List<Segment> _segments = new List<Segment>();
         private SnakeHead _snakeHead;
         private Controllers _controllers;
+        private AudioSource _audioSource;
+        private Animator _animator;
+        private readonly int _deathAnim = Animator.StringToHash("Death");
+        public bool DeathState { get; set; }
 
         public int BodySize => _segments.Count;
 
@@ -17,6 +23,8 @@ namespace Snake
         {
             _snakeHead = GetComponentInChildren<SnakeHead>();
             _controllers = GetComponentInChildren<Controllers>();
+            _audioSource = GetComponent<AudioSource>();
+            _animator = _snakeHead.GetComponent<Animator>();
         }
 
         private void FixedUpdate()
@@ -58,6 +66,14 @@ namespace Snake
                     segmentPrePos, segmentPos, speed * Time.fixedDeltaTime);
                 segmentPos = segmentPrePos;
             }
+        }
+
+        public void Death()
+        {
+            if (DeathState) return;
+            _animator.SetTrigger(_deathAnim);
+            _audioSource.Play();
+            DeathState = true;
         }
     }
 }

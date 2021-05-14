@@ -1,7 +1,6 @@
 using Snake;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Objects
 {
@@ -13,12 +12,14 @@ namespace Objects
         [SerializeField] private Color[] colors;
 
         private int _blockStrong;
+        private AudioSource _audioSource;
 
         
         private void Start()
         {
-            var a = 
-                _blockStrong = Random.Range(randomRange.x, randomRange.y);
+            _audioSource = GetComponent<AudioSource>();
+
+            var a = _blockStrong = Random.Range(randomRange.x, randomRange.y);
             blockLegend.text = _blockStrong.ToString();
 
             var blockStrongLevel = randomRange.y / colors.Length;
@@ -29,15 +30,18 @@ namespace Objects
 
         public void Damage(ref SnakeBody snakeBody)
         {
-            snakeBody.RemoveSegment();
-            if (snakeBody.BodySize < 1)
+            if (snakeBody.BodySize >= 1)
             {
-                Destroy(snakeBody.gameObject);   //TODO: Death Method
-                SceneManager.LoadScene(0);
+                snakeBody.RemoveSegment();
+                blockLegend.text = (_blockStrong--).ToString();
+                if (_blockStrong <= 0)
+                {
+                    _audioSource.Play();
+                    Destroy(gameObject);
+                }
+                return;
             }
-            
-            blockLegend.text = (_blockStrong--).ToString();
-            if (_blockStrong <= 0) Destroy(gameObject);
+            snakeBody.Death();
         } 
     }
 }

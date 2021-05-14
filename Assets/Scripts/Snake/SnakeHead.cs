@@ -35,13 +35,16 @@ namespace Snake
 
         private void OnCollisionStay2D(Collision2D other)
         {
-            if (other.gameObject.TryGetComponent(out Block block))
+            if (other.gameObject.TryGetComponent(out Block block) && !_snakeBody.DeathState)
             {
                 var sparkleSpawnPos = transform.position;
                 sparkleSpawnPos.y += transform.localScale.y;
                 Instantiate(effectOnCollision, sparkleSpawnPos, Quaternion.identity, transform);
+                
                 _audioSource.Play();
+                
                 block.Damage(ref _snakeBody);
+                
                 _rigidbody2D.AddForce(Vector2.down, ForceMode2D.Impulse);
             }
         }
