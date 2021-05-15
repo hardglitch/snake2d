@@ -52,6 +52,7 @@
      <Compile Include="Assets\Appodeal\Platforms\Appodeal\Android\AppodealInterstitialCallbacks.cs" />
      <Compile Include="Assets\Scripts\HUD\SoundVolume.cs" />
      <Compile Include="Assets\Scripts\Snake\SnakeHead.cs" />
+     <Compile Include="Assets\Scripts\Objects\Finish.cs" />
      <Compile Include="Assets\Appodeal\Platforms\ConsentManager\ConsentManagerClientFactory.cs" />
      <Compile Include="Assets\Appodeal\Api\Appodeal\Appodeal.cs" />
      <Compile Include="Assets\Scripts\Objects\Bonus.cs" />
@@ -64,6 +65,8 @@
      <Compile Include="Assets\Appodeal\Common\ConsentManager\IConsentInfoUpdateListener.cs" />
      <Compile Include="Assets\Appodeal\Common\Appodeal\INonSkippableVideoAdListener.cs" />
      <Compile Include="Assets\Scripts\HUD\TimeManagement.cs" />
+     <Compile Include="Assets\Scripts\Objects\StartLevel.cs" />
+     <Compile Include="Assets\Scripts\Objects\StartLevelText.cs" />
      <Compile Include="Assets\Scripts\EffectOnCollision.cs" />
      <Compile Include="Assets\Scripts\CameraBehaviour.cs" />
      <Compile Include="Assets\Appodeal\Platforms\Appodeal\Android\AppodealMrecCallbacks.cs" />
@@ -90,9 +93,6 @@
      <Compile Include="Assets\Scripts\Objects\Wall.cs" />
      <Compile Include="Assets\Appodeal\Platforms\Appodeal\iOS\AppodealAdsClient.cs" />
      <Compile Include="Assets\Appodeal\Platforms\Appodeal\AppodealAdsClientFactory.cs" />
-     <Compile Include="Assets\Scripts\Objects\Finish.cs" />
-     <Compile Include="Assets\Scripts\Objects\StartLevelText.cs" />
-     <Compile Include="Assets\Scripts\Objects\StartLevel.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

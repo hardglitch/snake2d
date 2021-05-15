@@ -39,7 +39,7 @@ namespace Snake
             if (other.gameObject.TryGetComponent(out Block block) && !_snakeBody.DeathState)
             {
                 var sparkleSpawnPos = transform.position;
-                sparkleSpawnPos.y += transform.localScale.y;
+                sparkleSpawnPos.y += transform.localScale.y / 2f;
                 Instantiate(effectOnCollision, sparkleSpawnPos, Quaternion.identity, transform);
                 
                 _audioSource.Play();
