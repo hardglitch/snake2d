@@ -363,6 +363,7 @@ MigrationBackup/
 FodyWeavers.xsd
 
 .idea/
+Assets/_Source/
 Library/
 Logs/
 obj/

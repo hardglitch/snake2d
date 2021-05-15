@@ -1,6 +1,7 @@
 using Objects;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Snake
 {
@@ -59,6 +60,13 @@ namespace Snake
                     _snakeBody.AddSegment();
                 }
                 Destroy(bonus.gameObject);
+            }
+
+            if (other.TryGetComponent(out Finish _))
+            {
+                // TODO: Victory
+                StartLevelText.LevelCount++;
+                SceneManager.LoadScene(0);
             }
         }
     }

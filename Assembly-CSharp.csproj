@@ -56,6 +56,7 @@
      <Compile Include="Assets\Appodeal\Api\Appodeal\Appodeal.cs" />
      <Compile Include="Assets\Scripts\Objects\Bonus.cs" />
      <Compile Include="Assets\Appodeal\Common\Appodeal\IInterstitialAdListener.cs" />
+     <Compile Include="Assets\Scripts\ADS\ReloadCounter.cs" />
      <Compile Include="Assets\Appodeal\Common\Appodeal\IRewardedVideoAdListener.cs" />
      <Compile Include="Assets\Appodeal\Platforms\Appodeal\Android\AppodealPermissionCallbacks.cs" />
      <Compile Include="Assets\Appodeal\Common\Appodeal\IMrecAdListener.cs" />
@@ -89,7 +90,9 @@
      <Compile Include="Assets\Scripts\Objects\Wall.cs" />
      <Compile Include="Assets\Appodeal\Platforms\Appodeal\iOS\AppodealAdsClient.cs" />
      <Compile Include="Assets\Appodeal\Platforms\Appodeal\AppodealAdsClientFactory.cs" />
-     <Compile Include="Assets\Scripts\ADS\ReloadCounter.cs" />
+     <Compile Include="Assets\Scripts\Objects\Finish.cs" />
+     <Compile Include="Assets\Scripts\Objects\StartLevelText.cs" />
+     <Compile Include="Assets\Scripts\Objects\StartLevel.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

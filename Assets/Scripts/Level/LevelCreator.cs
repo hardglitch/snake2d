@@ -1,5 +1,6 @@
 using ADS;
 using Objects;
+using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -14,6 +15,8 @@ namespace Level
         [SerializeField] private Block blockPrefab;
         [SerializeField] private Wall wallPrefab;
         [SerializeField] private Bonus bonusPrefab;
+        [SerializeField] private Finish finishPrefab;
+        [SerializeField] private StartLevel startPrefab;
 
         [Space] [Header("Percentage")]
         [Range(0, 100)]
@@ -37,20 +40,29 @@ namespace Level
         private SpawnPoint[] _spawnPoints;
         private const int DistanceBetweenLines = 1;
 
+        [SerializeField] private float countBetweenInterstitialShow = 10;
         private ADSettings _adSettings;
 
         private void Start()
         {
             _adSettings = GetComponent<ADSettings>();
-            if (ReloadCounter.Value == 0 || ReloadCounter.Value % 5 == 0)
+            if (ReloadCounter.Value == 0 || ReloadCounter.Value % countBetweenInterstitialShow == 0)
                 _adSettings.ShowInterstitial();
 
             _spawnPoints = GetComponentsInChildren<SpawnPoint>();
+
+            AddStart();
+            MoveSpawner();
+            MoveSpawner();
+
             for (var i = 0; i < levelSize; i++)
             {
                 GenerateLine();
                 MoveSpawner();
             }
+            
+            MoveSpawner();
+            AddFinish();
             
             _adSettings.ShowBanner();
         }
@@ -61,6 +73,16 @@ namespace Level
             {
                 CreateElement(spawnPoint.transform.position);
             }
+        }
+
+        private void AddStart()
+        {
+            Instantiate(startPrefab, _spawnPoints[2].transform.position, Quaternion.identity, container);
+        }
+
+        private void AddFinish()
+        {
+            Instantiate(finishPrefab, _spawnPoints[2].transform.position, Quaternion.identity, container);
         }
 
         private void CreateElement(Vector3 spawnPoint)
