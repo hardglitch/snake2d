@@ -1,6 +1,5 @@
 using ADS;
 using Objects;
-using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,17 +12,9 @@ namespace Level
         [SerializeField] private Transform container;
         
         [SerializeField] private Empty emptyPrefab;
-        private Empty _emptyPrefabCache;
-        
         [SerializeField] private Block blockPrefab;
-        private Block _blockPrefabCache;
-        
         [SerializeField] private Wall wallPrefab;
-        private Wall _wallPrefabCache;
-        
         [SerializeField] private Bonus bonusPrefab;
-        private Bonus _bonusPrefabCache;
-        
         [SerializeField] private Finish finishPrefab;
         [SerializeField] private StartLevel startPrefab;
 
@@ -59,8 +50,6 @@ namespace Level
                 _adSettings.ShowInterstitial();
 
             _spawnPoints = GetComponentsInChildren<SpawnPoint>();
-
-            _emptyPrefabCache = emptyPrefab;
 
             AddStart();
             MoveSpawner();
